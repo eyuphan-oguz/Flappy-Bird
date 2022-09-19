@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flappybird/barriers.dart';
 import 'package:flappybird/bird.dart';
@@ -40,14 +41,14 @@ class _HomePageState extends State<HomePage> {
       });
       setState(() {
         if(barrierXone<-1.1){
-          barrierXone+=2.2;
+          barrierXone+=2.5;
         }else{
           barrierXone-=0.05;
         }
       });
       setState(() {
         if(barrierXtwo<-1.1){
-          barrierXtwo+=2.2;
+          barrierXtwo+=2.5;
         }else{
           barrierXtwo-=0.05;
         }
@@ -64,6 +65,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+
         if (gameHasStarted) {
           jump();
         } else {
@@ -110,14 +112,14 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment(barrierXtwo,1.1),
                       duration: Duration(milliseconds: 0),
                       child: MyBarrier(
-                        size: 150.0,
-                      ),),
+                        size: 250.0,
+                      ),),//alt
                     AnimatedContainer(
                       alignment: Alignment(barrierXtwo,-1.1),
                       duration: Duration(milliseconds: 0),
                       child: MyBarrier(
-                        size: 250.0,
-                      ),)
+                        size: 50.0,
+                      ),)//ust
 
                   ],
                 )),
